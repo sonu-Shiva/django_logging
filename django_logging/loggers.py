@@ -11,6 +11,7 @@ from .queue_listner import log_queue, queue_listner
 
 
 def get_logger_settings(env_name, log_dir, log_file_name, application_log_level='DEBUG',
+                        application_log_handlers,
                         logstash_listner_ip=None,
                         logstash_listner_port=None,
                         logstash_tags=[],
@@ -138,7 +139,7 @@ def get_logger_settings(env_name, log_dir, log_file_name, application_log_level=
                 'propagate': True
             },
             'application': {
-                'handlers': ['queue_handler'],
+                'handlers': application_log_handlers,
                 'level': application_log_level,
                 'propagate': True
             },
