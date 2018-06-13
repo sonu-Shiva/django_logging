@@ -33,7 +33,7 @@ def get_logger_settings(env_name, log_dir, log_file_name, application_log_level=
     )
 
     console_handler = StreamHandler()
-    console_handler.addFilter(RequireDebugTrue())
+    # console_handler.addFilter(RequireDebugTrue())
     console_handler.addFilter(TimestampFilter())
     console_handler.setFormatter(verbose_formatter)
 
